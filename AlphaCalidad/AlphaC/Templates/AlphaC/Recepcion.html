@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recepcion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href='{%  static "estilos.css" %}' rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <ul>
+            <input type="button" class="btnx" onclick="history.back()" name="volver atrás" value="volver atrás ">
+        </ul>
+
+        <h1>Recepcion de Calidad </h1>
+
+
+
+        <table class="table table-dark table-borderles" id="tabla10">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+
+                    <th>Nombre</th>
+                    <th>Invernadero</th>
+                    <th>Variedad</th>
+                    <th>Daños</th>
+
+
+
+                    <th>Kilogramos</th>
+                    <th>Cajas/Cosechas</th>
+                    
+
+
+                    <th>Maduración</th>
+                    <th>Flacido</th>
+                    <th>Blosson</th>
+                    <th>Agujero</th>
+                    <th>Tijera</th>
+                    <th>CortePendulo</th>
+                    <th>Golpes</th>
+                    <th>DañoMecanico</th>
+                    <th>Gusano</th>
+                    <th>Cracking</th>
+                    <th>Cicatriz</th>
+                    <th>Corte Navaja</th>
+                    <th>Hongo</th>
+                    <th>Grillo</th>
+                    <th>Silverado</th>
+                    <th>Deforme</th>
+                    <th>TamañoPequeño</th>
+                    <th>opciones</th>
+
+
+
+                </tr>
+            </thead>
+
+
+            <!-- Recorremos los registros de la tabla  y los mostramos -->
+            <tbody>
+                {% for CalidadRecepcion in object_list %}
+                <tr>
+                    <td>{{ CalidadRecepcion.idcalidad_recepcion }}</td>
+                    <td>{{ CalidadRecepcion.fecha }}</td>
+                    <td>{{ CalidadRecepcion.hora }}</td>
+                    <td>{{ CalidadRecepcion.nombre_auxiliar}}</td>
+                    <td>{{ CalidadRecepcion.idinvernadero}}</td>
+                    <td>{{ CalidadRecepcion.idvariedad1 }}</td>
+
+                    <td>{{ CalidadRecepcion.kilogramo }}</td>
+                    <td>{{ CalidadRecepcion.cajas_cosechas }}</td>
+                  
+                    <td>{{ CalidadRecepcion.cortenavaja}}</td>
+                    <td>{{ CalidadRecepcion.gradomaduracion}}</td>
+                    <td>{{ CalidadRecepcion.flacido}}</td>
+                    <td>{{ CalidadRecepcion.blossom}}</td>
+                    <td>{{ CalidadRecepcion.agujero}}</td>
+                    <td>{{ CalidadRecepcion.sobremaduro }}</td>
+                    <td>{{ CalidadRecepcion.quemadosol }}</td>
+                    <td>{{ CalidadRecepcion.dañomecanico }}</td>
+                    <td>{{ CalidadRecepcion.gusano }}</td>
+                    <td>{{ CalidadRecepcion.cracking }}</td>
+                    <td>{{ CalidadRecepcion.cicatriz }}</td>
+                    <td>{{ CalidadRecepcion.podrido }}</td>
+                    <td>{{ CalidadRecepcion.hongo }}</td>
+                    <td>{{ CalidadRecepcion.grillo }}</td>
+                    <td>{{ CalidadRecepcion.silverado }}</td>
+                    <td>{{ CalidadRecepcion.deforme }}</td>
+                    <td>{{ CalidadRecepcion.silverado }}</td>
+                    <td>{{ CalidadRecepcion.deforme }}</td>
+                    <td>{{ CalidadRecepcion.tamaño_pequeño }}</td>
+                    
+
+
+
+
+
+                    <td>
+                </tr>
+                {% endfor %}
+</body>
+
+</html>

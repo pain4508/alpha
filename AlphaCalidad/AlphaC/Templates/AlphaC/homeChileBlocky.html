@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Chile Blocky</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href='{%  static "estilos.css" %}' rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+   
+    <form method="post">
+        {% csrf_token %}
+        
+        <ul>
+            <input type="button" class="btnx" onclick="history.back()" name="volver atrás" value="volver atrás ">
+            <a href="principal.html">Volver al inicio</a>0
+            <input type="button" class="btnx" onclick="history.go()" name="volver atrás" value="siguiente ">
+
+        </ul>
+
+        <ul class="menu">
+
+            <li><a href="/Invernadero">Asignado en Cosecha por Unidades</a></li>
+            <li><a href="/Bcampokg">Asignado por Coseche  Kilogramo</a></li>
+            <li><a href="/Empacador">Empacador</a></li>
+            <li><a href="/Recepcion">Recepcion en Calidad</a></li>
+            <li><a href="">Reportes</a></li>
+
+
+        </ul>
+    </form>
+
+</body>
+
+</html>

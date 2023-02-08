@@ -1,0 +1,8 @@
+<h1>Registro de nuevo Usuario</h1>
+{{error}}
+<form method="post">
+   
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Registrarse</button>
+</form>

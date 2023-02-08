@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Tomate en Empaque</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href='{%  static "estilos.css" %}' rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <h1>Datos de Tomate Empaque </h1>
+        <br/> {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+
+        <div align="left" class="btn_crear mb-3">
+            <a href="/nuevoTomateEmpaque" type="button" class="btn btn-primary">Nuevo registro</a>
+        </div>
+
+
+        <table class="table table-dark table-borderles" id="tabla10">
+            <thead>
+                <tr>
+
+                    <th>Codigo</th>
+                    <th>Fecha</th>
+                    <th>Invernadero</th>
+                    <th>Variedad</th>
+                    <th>Talla</th>
+                    <th>Kg</th>
+                    <th>cajas/Cosechas</th>
+                    
+
+                    <th>Aprovechable</th>
+                    <th>Rechazo</th>
+                    <th>relacionCaja5/Cesta</th>
+
+
+                    <th>Mecanico</th>
+                    <th>Gusano</th>
+                    <th>GradoOptimo</th>
+                    <th>Materia</th>
+                    <th>silverado</th>
+
+                    <th>Sobre</th>
+                    <th>blossom</th>
+                    <th>Cracking</th>
+
+                    <th>Deforme</th>
+                    <th>Flacido</th>
+                    <th>Hongo</th>
+                    <th>Podrido</th>
+                    <th>Tamaño</th>
+                    <th>Temperatura</th>
+                    <th>Opciones</th>
+
+
+
+
+
+                </tr>
+            </thead>
+
+
+            <!-- Recorremos los registros de la tabla  y los mostramos -->
+            <tbody>
+                {% for TomateEmpaque in object_list %}
+                <tr>
+                    <td>{{ TomateEmpaque.idtomate_empaque }}</td>
+                    <td>{{ TomateEmpaque.fecha }}</td>
+
+                    <td>{{ TomateEmpaque.idinvernadero }}</td>
+                    <td>{{ TomateEmpaque.idvariedad2 }}</td>
+                    <td>{{ TomateEmpaque.idtalla }}</td>
+
+                    <td>{{ TomateEmpaque.kilogramo }}</td>
+                    <td>{{ TomateEmpaque.cajas_cosechas }}</td>
+                    
+                    <td>{{ TomateEmpaque.mecanico}}</td>
+                    <td>{{ TomateEmpaque.gusano}}</td>
+                    <td>{{ TomateEmpaque.grado_optimo}}</td>
+                    <td>{{ TomateEmpaque.materia}}</td>
+                    <td>{{ TomateEmpaque.silverado}}</td>
+                    <td>{{ TomateEmpaque.sobre }}</td>
+                    <td>{{ TomateEmpaque.blossom }}</td>
+                    <td>{{ TomateEmpaque.cracking }}</td>
+                    <td>{{ TomateEmpaque.deforme }}</td>
+                    <td>{{ TomateEmpaque.flacido }}</td>
+                    <td>{{ TomateEmpaque.hongo }}</td>
+                    <td>{{ TomateEmpaque.podrido }}</td>
+                    <td>{{ TomateEmpaque.tamaño }}</td>
+                    <td>{{ TomateEmpaque.temperatura }}</td>
+                    <td>
+
+                        <!-- Formulario para eliminar un registro desde la misma tabla HTML -->
+                        <form method="POST" action="/eliminarTomateEmpaque/{{TomateEmpaque.idtomate_empaque}}">
+                            {% csrf_token %}
+                            <div class="btn-group">
+    
+                                <!-- Creacion de botones de opciones -->
+    
+                                <a href="/editarTomateEmpaque/{{TomateEmpaque.idtomate_empaque}}" title="Editar" type="button" class="btn btn-primary">Editar </a>
+                                <button class="btn btn-danger" onclick="return eliminar();" type="submit">Eliminar</button>
+                            </div>
+                        </form>
+    
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+    
+    
+    
+            </div>
+    
+            <script type="text/javascript">
+                function eliminar() {
+                    var x = confirm("¿Está seguro de que desea eliminar el registro?");
+                    if (x)
+                        return true;
+    
+                    else
+                        return false;
+                }
+            </script>
+    
+        </form>
+    </table>                
+</body>
+
+</html>
