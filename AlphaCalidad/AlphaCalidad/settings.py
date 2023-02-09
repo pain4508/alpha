@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-)va5ei1%ri+7qazho*g8@5tl4%mu%7$$o4zeyq&4k*@u8cxl(g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['nuevaappdjango.azurewebsites.net']
+ALLOWED_HOSTS = ['http://nuevaappdjango.azurewebsites.net/']
 STATICFILES_DIRS = ['C:/ProyectoAlphaCalidad/AlphaCalidad/AlphaC/Templates/static']
 
 # Application definition
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,7 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
