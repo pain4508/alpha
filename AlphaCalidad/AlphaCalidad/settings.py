@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)va5ei1%ri+7qazho*g8@5tl4%mu%7$$o4zeyq&4k*@u8cxl(g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nuevaappdjango.azurewebsites.net']
 STATICFILES_DIRS = ['C:/ProyectoAlphaCalidad/AlphaCalidad/AlphaC/Templates/static']
 
 # Application definition
