@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/f025a998-59b0-4b5b-b3ca-3acebed5f2ed/AppServices/subscriptions/f025a998-59b0-4b5b-b3ca-3acebed5f2ed/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/nuevaappdjango",
+    "appService.deploySubpath": "."
+}
