@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)va5ei1%ri+7qazho*g8@5tl4%mu%7$$o4zeyq&4k*@u8cxl(g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://djangonewapp.azurewebsites.net']
+ALLOWED_HOSTS = ['https://djangonewapp.azurewebsites.net', '20.119.8.31']
 STATICFILES_DIRS = ['C:/ProyectoAlphaCalidad/AlphaCalidad/AlphaC/Templates/static']
 
 # Application definition
