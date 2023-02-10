@@ -31,7 +31,7 @@ STATICFILES_DIRS = ['C:/ProyectoAlphaCalidad/AlphaCalidad/AlphaC/Templates/stati
 # Application definition
 
 INSTALLED_APPS = [
-    "whitenoise.runserver_nostatic",
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
