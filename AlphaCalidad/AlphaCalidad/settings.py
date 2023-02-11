@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)va5ei1%ri+7qazho*g8@5tl4%mu%7$$o4zeyq&4k*@u8cxl(g'
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config("DEBUG", cast=bool)
 
-ALLOWED_HOSTS = ['https://djangonewapp.azurewebsites.net']
+ALLOWED_HOSTS = config(
+    'ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')]
+)
+
 STATICFILES_DIRS = ['C:/ProyectoAlphaCalidad/AlphaCalidad/AlphaC/Templates/static']
 
 # Application definition
@@ -79,10 +83,10 @@ WSGI_APPLICATION = 'AlphaCalidad.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'Calidad',
-        'USER':'sa',
-        'PASSWORD': '12345',
-        'HOST':'LAPTOP-SP24994F',
+        'NAME': config("DB_NAME"),
+        'USER':config("DB_USER"),
+        'PASSWORD': config("DB_PASSWORD"),
+        'HOST':config("DB_HOST"),
         'PORT':'',
         'OPTIONS':{
             'driver': 'ODBC Driver 17 for SQL Server'
