@@ -1,0 +1,102 @@
+body {
+    font-family: arial, helvetica;
+    background: rgb(255, 255, 255);
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menuBlocky {
+    list-style: none;
+    padding: 30px;
+    background: #04252b;
+    width: 2000%;
+    max-width: 1000px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    display: block;
+}
+
+.menu {
+    list-style: none;
+    padding: 30px;
+    background: #04252b;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    margin-left: 0 px;
+    margin-top: 400px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 30px;
+    display: block;
+}
+
+.menu li {
+    display: inline-block;
+    text-align: center;
+}
+
+.menu li a:hover {
+    background: #ef8354;
+}
+
+h1 {
+    text-align: center;
+    font-size: 200;
+}
+
+.encabezado {
+    border: 2px solid black;
+}
+
+.encabezado th {
+    border: 1px solid black;
+    color: white;
+    background-color: rgb(8, 156, 99);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.encabezado td {
+    text-align: center;
+    background-image: url(logo.jpg);
+}
+
+.estilo {
+    background-color: black;
+    color: white;
+}
+
+.formLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: aqua;
+    border-style: double;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 100px;
+    background-color: grey;
+    border-radius: 1cm;
+}
+
+#tabla10 {
+    border-style: double;
+    size: 10px;
+}
+
+table{
+    border-style: double;
+}
+

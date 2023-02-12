@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config, Csv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,19 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("SECRET_KEY")
-SECURE_HSTS_SECONDS = 3600
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_SSL_REDIRECT = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_HSTS_PRELOAD = True
+SECRET_KEY = 'django-insecure-)va5ei1%ri+7qazho*g8@5tl4%mu%7$$o4zeyq&4k*@u8cxl(g'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DEBUG", default=False, cast=bool)
+DEBUG = True
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = ['127.0.0.1',
+    'localhost']
 
 STATICFILES_DIRS = ['C:/ProyectoAlphaCalidad/AlphaCalidad/AlphaC/Templates/static']
 
@@ -88,10 +83,10 @@ WSGI_APPLICATION = 'AlphaCalidad.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': config("DB_NAME"),
-        'USER':config("DB_USER"),
-        'PASSWORD': config("DB_PASSWORD"),
-        'HOST':config("DB_HOST"),
+        'NAME': 'Calidad',
+        'USER':'sa',
+        'PASSWORD': '12345',
+        'HOST':'LAPTOP-SP24994F',
         'PORT':'',
         'OPTIONS':{
             'driver': 'ODBC Driver 17 for SQL Server'
@@ -137,7 +132,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
+
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type

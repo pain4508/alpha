@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 ###
 from AlphaC.views import   ListChileMiniCampoPdf, actualizarRegistroTransEmpaque, eliminarRegistroTransEmpaque, registroNuevoTransEmpaque,  actualizarRegistroTransInvernadero, eliminarRegistroTransInvernadero, registroNuevoTransInvernadero, actualizarRegistroCadenaFrio, eliminarRegistroCadenaFrio, registroNuevoCadenaFrio, actualizarRegistroTomateEmpaque, eliminarRegistroTomateEmpaque, registroNuevoTomateEmpaque, actualizarRegistroTomateCosecha, eliminarRegistroTomateCosecha, registroNuevoTomateCosecha, actualizarRegistroChileMiniEmpaque, eliminarRegistroChileMiniEmpaque, registroNuevoChileMiniEmpaque, actualizarRegistroChileMiniCosecha, eliminarRegistroChileMiniCosecha, registroNuevoChileMiniCosecha, actualizarRegistroEmpacador, eliminarRegistroEmpacador, registroNuevoEmpacador, HomeChileMini, registroNuevoCosechakg, actualizarRegistroInvernaderoKg, eliminarBlockyCosechaKg, registroNuevoCosechaUnidades, eliminarBlockyCosechaUni, actualizarRegistroInvernadero, HomeTomate,HomeTransporte,HomeCadenaFrio,CadenaFrioViews,registroNuevo,TrasnporteEmpaqueViews,TransporteInvernaderoViews,ChileminiEmpaqueViews,TomateCosechaViews,TomateEmpaqueViews, eliminarRegistro, ChileminiViews, actualizarRegistro, InvernaderoViews,BcampokgViews,EmpacadorViews,RecepcionViews, homeViewsBlocky, cerrarViews, iniciarSesionViews, registroUser, homeViews, principalViews, iniciarSesionViews
@@ -179,4 +181,4 @@ path('eliminarCadenaFrio/<int:pk>', eliminarRegistroCadenaFrio.as_view(), name='
 
 
 
-]
+] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
