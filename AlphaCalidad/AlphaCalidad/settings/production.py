@@ -18,7 +18,7 @@ SECURE_HSTS_PRELOAD = True
 
 
 DEBUG = False
-ALLOWED_HOSTS = ['127.0.0.1',
+ALLOWED_HOSTS = ['djangonewapp.azurewebsites.net','127.0.0.1',
     'localhost']
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
